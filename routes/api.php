@@ -41,3 +41,7 @@ Route::middleware('auth:sanctum')->group(function () {
     // 4. Logout
     Route::post('/logout', [AuthController::class, 'logout']);
 });
+
+Route::get('/login', function () {
+    return response()->json(['message' => 'Unauthenticated'], 401);
+})->name('login');
